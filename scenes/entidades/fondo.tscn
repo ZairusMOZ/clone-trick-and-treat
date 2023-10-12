@@ -1,9 +1,22 @@
-[gd_scene format=3 uid="uid://4fblfn77a820"]
+[gd_scene load_steps=3 format=3 uid="uid://4fblfn77a820"]
+
+[ext_resource type="Texture2D" uid="uid://dfq8bcxf5kagl" path="res://assets/imagenes/fondo bosque.png" id="1_admgs"]
+[ext_resource type="Script" path="res://scenes/entidades/fondo imagen.gd" id="2_dgkpl"]
 
 [node name="fondo" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 1.672
+anchor_bottom = 1.657
+offset_right = -0.144043
+offset_bottom = 0.263916
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="fondo_imagen" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_admgs")
+script = ExtResource("2_dgkpl")
+
+[connection signal="draw" from="fondo_imagen" to="fondo_imagen" method="_on_draw"]
